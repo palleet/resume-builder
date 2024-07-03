@@ -1,0 +1,8 @@
+.text-area {
+    display: list-item;
+    margin-left : 1em;
+    outline: none;
+}
+.text-area div {
+    display: list-item;
+}
