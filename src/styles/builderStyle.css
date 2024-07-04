@@ -1,0 +1,22 @@
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#resume-preview, #Information {
+    flex: 1;
+}
+
+#resume-preview {
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+    background-color: white;
+    font-weight: 400;
+    font-size: 12px;
+    border-radius: 20px;
+}
+
+#Information {
+
+}
