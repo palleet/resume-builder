@@ -1,0 +1,47 @@
+#paper hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#paper {
+    width: 216mm;
+    height: 279mm;
+    margin: 5mm 10mm 5mm 10mm;
+    padding: 0;
+    background: white;
+}
+
+#paper h1, #paper h2, #paper p {
+    margin: 0; padding: 0;
+    line-height: 1.05em;
+}
+
+#paper h2 {
+    font-size: 1em;
+    text-align: left;
+}
+
+#expHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#positionTitle {
+    font-weight: 700;
+}
+
+#dates {
+}
+
+#origin {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-style: italic;
+}

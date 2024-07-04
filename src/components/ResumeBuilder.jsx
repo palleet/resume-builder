@@ -5,6 +5,7 @@ import WorkExperienceManager from "./WorkExperienceManager.jsx";
 import ResumePreview from "./ResumePreview.jsx";
 
 import "../styles/builderStyle.css";
+import "../styles/paperStyle.css"
 
 import { useState } from "react";
 
@@ -23,7 +24,7 @@ function ResumeBuilder() {
             location: 'Irvine',
             startDate: '1999-02',
             endDate: '2000-10',
-            description: ['']
+            description: ''
         }
     ]); // store experience objects
 

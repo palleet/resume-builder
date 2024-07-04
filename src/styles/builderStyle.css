@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Computer Modern";
+    src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
+}
+
 #container {
     display: flex;
     flex-direction: row;
@@ -8,15 +13,29 @@
     flex: 1;
 }
 
+
+
 #resume-preview {
     color: black;
-    font-family: "Times New Roman", Times, serif;
-    background-color: white;
+    font-family: "Computer Modern";
+    background-color: #f6f7f9;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 11pt;
     border-radius: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 #Information {
 
+}
+
+
+
+
+
+@media only screen and (max-width: 1250px) {
+    #container {
+        flex-direction: column;
+    }
 }

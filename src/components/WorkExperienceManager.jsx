@@ -8,7 +8,7 @@ function WorkExperienceManager({experiences, handleInfoChange, setExperiences}) 
             location: 'Berkeley',
             startDate: '1999-02',
             endDate: '2000-10',
-            description: ['']
+            description: ''
         }]);
     }
 

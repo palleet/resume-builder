@@ -1,8 +1,13 @@
-.text-area {
-    display: list-item;
-    margin-left : 1em;
-    outline: none;
-}
-.text-area div {
-    display: list-item;
+/*.text-area {*/
+/*    display: list-item;*/
+/*    margin-left : 1em;*/
+/*    outline: none;*/
+/*}*/
+/*.text-area div {*/
+/*    display: list-item;*/
+/*}*/
+
+.inputCol {
+    display: flex;
+    flex-direction: column;
 }
