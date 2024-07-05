@@ -8,12 +8,25 @@ import "../styles/builderStyle.css";
 import "../styles/paperStyle.css"
 
 import { useState } from "react";
+import {EducationManager} from "./EducationManager.jsx";
 
 function ResumeBuilder() {
     // personal info state declarations
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
+
+    // education info state declarations
+    const [schools, setSchools] = useState([
+        {
+            id: uuidv4(),
+            schoolName: 'First College University',
+            location: 'Irvine',
+            startDate: '1999-02',
+            endDate: '2000-10',
+            degree: 'Computer Science'
+        }
+    ]);
 
     // work experience info state declarations
     const [experiences, setExperiences] = useState([
@@ -54,6 +67,17 @@ function ResumeBuilder() {
         );
     }
 
+
+    function handleSchoolChange(e, formData) {
+        e.preventDefault();
+
+        setSchools(prevSchools=>
+            prevSchools.map(school =>
+                school.id === formData.id ? formData : school
+            )
+        );
+    }
+
     return (
         <>
             <h1>Resume Outliner</h1>
@@ -64,6 +88,12 @@ function ResumeBuilder() {
                         email={email}
                         phoneNumber={phoneNumber}
                         handleInfoChange={handlePersonalInfoChange}
+                    />
+
+                    <EducationManager
+                        schools={schools}
+                        handleInfoChange={handleSchoolChange}
+                        setSchools={setSchools}
                     />
 
                     <WorkExperienceManager

@@ -1,8 +1,10 @@
 import WorkExperienceInfo from "./WorkExperienceInfo.jsx";
+import {v4 as uuidv4} from "uuid";
 
 function WorkExperienceManager({experiences, handleInfoChange, setExperiences}) {
     function addExperience() {
         setExperiences([...experiences, {
+            id: uuidv4(),
             positionTitle: 'new position',
             employer: 'new employer',
             location: 'Berkeley',

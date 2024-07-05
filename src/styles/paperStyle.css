@@ -1,7 +1,7 @@
 #paper hr {
     display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
     margin-left: auto;
     margin-right: auto;
     border-style: solid;
@@ -26,6 +26,10 @@
     text-align: left;
 }
 
+#paperContainer {
+    margin: 0.5in 0.5in;
+}
+
 #expHeader {
     display: flex;
     flex-direction: row;
@@ -39,9 +43,22 @@
 #dates {
 }
 
+#origin, #description {
+    font-size: 10pt;
+}
+
 #origin {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     font-style: italic;
+}
+
+#description {
+    text-align: left;
+}
+
+#description ul {
+    margin: 0;
+
 }
