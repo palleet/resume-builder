@@ -1,7 +1,4 @@
-@font-face {
-    font-family: "Computer Modern";
-    src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
-}
+
 
 #container {
     display: flex;
@@ -17,13 +14,13 @@
 
 #resume-preview {
     color: black;
-    font-family: "Computer Modern";
     background-color: #f6f7f9;
     font-weight: 400;
     font-size: 11pt;
     border-radius: 20px;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #Information {
@@ -37,5 +34,35 @@
 @media only screen and (max-width: 1250px) {
     #container {
         flex-direction: column;
+    }
+    #saveBtn {
+        width: 60%;
+    }
+}
+
+@media print {
+    @page {
+        size: Letter; /* You can adjust the size as needed (e.g., Letter) */
+        margin: 0;
+    }
+    /* Limit page print to only 1 page */
+    html, body {
+        height:100%;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden;
+    }
+    body {
+        visibility: hidden;
+    }
+    #paper {
+        visibility: visible;
+        position: absolute;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+        width: 100%;
+        max-height: 100%;
+        page-break-after: always;
     }
 }

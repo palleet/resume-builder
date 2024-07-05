@@ -107,6 +107,7 @@ function ResumeBuilder() {
                     email={email}
                     phoneNumber={phoneNumber}
                     experiences={experiences}
+                    schools={schools}
                 />
             </div>
         </>

@@ -1,7 +1,14 @@
 import WorkExperienceInfo from "./WorkExperienceInfo.jsx";
 
 function ResumePreview(props) {
-    // let descriptionArray = experience.description.split('\n');
+    // function printDiv(divName) {
+    //     var printContents = document.getElementById(divName).innerHTML;
+    //     w=window.open();
+    //     w.document.write(printContents);
+    //     w.print();
+    //     w.close();
+    // }
+
     return (
         <div id="resume-preview">
             <div id="paper">
@@ -9,20 +16,33 @@ function ResumePreview(props) {
                     <h1>{props.fullName}</h1>
                     <div id="contactInfo">{props.phoneNumber} | {props.email}</div>
                     <br/>
+                    <h2>Education</h2>
+                    {props.schools.map((school) => {
+
+                        return (
+                            <>
+
+                                <div id="secHeader">
+                                    <div id="schoolName">{school.schoolName}</div>
+                                    <div id="location">{school.location}</div>
+                                </div>
+                                <div id="origin">
+                                    <div id="degree">{school.degree}</div>
+                                    <div id="dates">{school.startDate} - {school.endDate}</div>
+                                </div>
+
+                            </>
+                        )
+                    })}
+                    <hr />
                     <h2>Experience</h2>
                     <hr/>
                     {props.experiences.map((experience, index) => {
                         let descriptionArray = experience.description.split('\n');
                         return (
                             <>
-                                {/*<h2>Position: {experience.positionTitle}</h2>*/}
-                                {/*<h2>Emnployer: {experience.employer}</h2>*/}
-                                {/*<h2>Location: {experience.location}</h2>*/}
-                                {/*<h2>Start Date: {experience.startDate}</h2>*/}
-                                {/*<h2>End Date: {experience.endDate}</h2>*/}
-                                {/*<h2>Responsbilities and achievements: {experience.description}</h2>*/}
 
-                                <div id="expHeader">
+                                <div id="secHeader">
                                     <div id="positionTitle">{experience.positionTitle}</div>
                                     <div id="dates">{experience.startDate} - {experience.endDate}</div>
                                 </div>
@@ -44,6 +64,7 @@ function ResumePreview(props) {
                     })}
                 </div>
             </div>
+            <button id="saveBtn" onClick={() => window.print()}>Save PDF</button>
 
 
         </div>)

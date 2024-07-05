@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Computer Modern";
+    src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
+}
+
 #paper hr {
     display: block;
     margin-top: 0.1em;
@@ -9,6 +14,7 @@
 }
 
 #paper {
+    font-family: "Computer Modern";
     width: 216mm;
     height: 279mm;
     margin: 5mm 10mm 5mm 10mm;
@@ -30,13 +36,13 @@
     margin: 0.5in 0.5in;
 }
 
-#expHeader {
+#secHeader {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-#positionTitle {
+#positionTitle, #schoolName {
     font-weight: 700;
 }
 
@@ -61,4 +67,8 @@
 #description ul {
     margin: 0;
 
+}
+
+#saveBtn {
+    width: 50%;
 }
