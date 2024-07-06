@@ -20,6 +20,9 @@
     margin: 5mm 10mm 5mm 10mm;
     padding: 0;
     background: white;
+    font-weight: 400;
+    font-size: 11pt;
+    color: black;
 }
 
 #paper h1, #paper h2, #paper p {

@@ -17,6 +17,7 @@ function ResumePreview(props) {
                     <div id="contactInfo">{props.phoneNumber} | {props.email}</div>
                     <br/>
                     <h2>Education</h2>
+                    <hr/>
                     {props.schools.map((school) => {
 
                         return (
@@ -34,7 +35,6 @@ function ResumePreview(props) {
                             </>
                         )
                     })}
-                    <hr />
                     <h2>Experience</h2>
                     <hr/>
                     {props.experiences.map((experience, index) => {

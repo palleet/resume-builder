@@ -9,6 +9,7 @@ import "../styles/paperStyle.css"
 
 import { useState } from "react";
 import {EducationManager} from "./EducationManager.jsx";
+import ProjectManager from "./ProjectManager.jsx";
 
 function ResumeBuilder() {
     // personal info state declarations
@@ -39,7 +40,19 @@ function ResumeBuilder() {
             endDate: '2000-10',
             description: ''
         }
-    ]); // store experience objects
+    ]);
+
+    // project info state declarations
+    const [projects, setProjects] = useState([
+        {
+            id: uuidv4(),
+            projectName: 'example Project v1',
+            employer: 'C++, Qt',
+            startDate: '1999-02',
+            endDate: '2000-10',
+            description: ''
+        }
+    ]);
 
     function handlePersonalInfoChange(e) {
         e.preventDefault();
@@ -66,7 +79,15 @@ function ResumeBuilder() {
             )
         );
     }
+    function handleProjectChange(e, formData) {
+        e.preventDefault();
 
+        setProjects(prevProjects=>
+            prevProjects.map(project =>
+                project.id === formData.id ? formData : project
+            )
+        );
+    }
 
     function handleSchoolChange(e, formData) {
         e.preventDefault();
@@ -101,6 +122,12 @@ function ResumeBuilder() {
                         handleInfoChange={handleWorkExperienceChange}
                         setExperiences={setExperiences}
                     />
+
+                    <ProjectManager
+                        projects={projects}
+                        handleInfoChange={handleProjectChange}
+                        setProjects={setProjects}
+                    />
                 </div>
                 <ResumePreview
                     fullName={fullName}
@@ -110,6 +137,9 @@ function ResumeBuilder() {
                     schools={schools}
                 />
             </div>
+            <footer>
+                <a href="https://www.flaticon.com/free-icons/human-resources" title="human resources icons">Favicon from Flaticon</a>
+            </footer>
         </>
 
     )

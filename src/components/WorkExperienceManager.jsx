@@ -16,12 +16,12 @@ function WorkExperienceManager({experiences, handleInfoChange, setExperiences}) 
 
     return (
         <>
-            {experiences.map((experience, index) =>
+            {experiences.map((experience) =>
                 <WorkExperienceInfo
 
                     handleInfoChange={handleInfoChange}
                     experience={experience}
-                    key={index}
+                    key={experience.id}
 
                 />
             )}
