@@ -62,6 +62,29 @@ function ResumePreview(props) {
                             </>
                         )
                     })}
+                    <h2>Projects</h2>
+                    <hr />
+                    {props.projects.map((project, index) => {
+                        let descriptionArray = project.description.split('\n');
+                        return (
+                            <>
+
+                                <div id="secHeader">
+                                    <div id="projectName">{project.projectName}</div>
+                                    <div id="dates">{project.startDate} - {project.endDate}</div>
+                                </div>
+                                <div id="description">
+                                    <ul>
+                                        {descriptionArray.map((line, index) => (
+                                            <li key={index}>{line}</li>
+                                        ))}
+                                    </ul>
+
+                                </div>
+
+                            </>
+                        )
+                    })}
                 </div>
             </div>
             <button id="saveBtn" onClick={() => window.print()}>Save PDF</button>

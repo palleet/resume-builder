@@ -135,6 +135,7 @@ function ResumeBuilder() {
                     phoneNumber={phoneNumber}
                     experiences={experiences}
                     schools={schools}
+                    projects={projects}
                 />
             </div>
             <footer>
