@@ -3,8 +3,8 @@ import React, { useState } from "react";
 export default function TechnicalSkillsInfo({handleInfoChange, skill}) {
     const [formData, setFormData] = useState({
         id: skill.id,
-        positionTitle: skill.category|| "",
-        employer: skill.items || ""
+        category: skill.category|| "",
+        items: skill.items || ""
     });
 
     const handleChange = (e) => {
@@ -29,7 +29,7 @@ export default function TechnicalSkillsInfo({handleInfoChange, skill}) {
                         name="category"
                         placeholder="Category Name"
                         className="category"
-                        value={formData.positionTitle}
+                        value={formData.category}
                         onChange={handleChange}
                     />
                 </div>

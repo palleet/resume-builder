@@ -1,4 +1,5 @@
 import WorkExperienceInfo from "./WorkExperienceInfo.jsx";
+import formatDate from "./helpers/formHelpers.js";
 
 function ResumePreview(props) {
     return (
@@ -21,7 +22,7 @@ function ResumePreview(props) {
                                 </div>
                                 <div id="origin">
                                     <div id="degree">{school.degree}</div>
-                                    <div id="dates">{school.startDate} - {school.endDate}</div>
+                                    <div id="dates">{formatDate(school.startDate)} - {formatDate(school.endDate)}</div>
                                 </div>
 
                             </>
@@ -36,7 +37,7 @@ function ResumePreview(props) {
 
                                 <div id="secHeader">
                                     <div id="positionTitle">{experience.positionTitle}</div>
-                                    <div id="dates">{experience.startDate} - {experience.endDate}</div>
+                                    <div id="dates">{formatDate(experience.startDate)} - {formatDate(experience.endDate)}</div>
                                 </div>
                                 <div id="origin">
                                     <div id="employer">{experience.employer}</div>
@@ -62,8 +63,11 @@ function ResumePreview(props) {
                             <>
 
                                 <div id="secHeader">
-                                    <div id="projectNameAndSkills">{project.projectName} | {project.skills}</div>
-                                    <div id="dates">{project.startDate} - {project.endDate}</div>
+                                    <div id="projectNameAndSkills">
+                                        <span className="projectName">{project.projectName} </span>
+                                        | {project.skills}
+                                    </div>
+                                    <div id="dates">{formatDate(project.startDate)} - {formatDate(project.endDate)}</div>
                                 </div>
                                 <div id="description">
                                     <ul>
