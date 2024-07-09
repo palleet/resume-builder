@@ -10,6 +10,7 @@ import "../styles/paperStyle.css"
 import { useState } from "react";
 import {EducationManager} from "./EducationManager.jsx";
 import ProjectManager from "./ProjectManager.jsx";
+import TechnicalSkillsManager from "./TechnicalSkillsManager.jsx";
 
 function ResumeBuilder() {
     // personal info state declarations
@@ -51,6 +52,15 @@ function ResumeBuilder() {
             startDate: '1999-02',
             endDate: '2000-10',
             description: ''
+        }
+    ]);
+
+    // technical skills state declarations
+    const [skills, setSkills] = useState([
+        {
+            id: uuidv4(),
+            category: 'languages',
+            items: 'C++, Java, Python'
         }
     ]);
 
@@ -99,6 +109,16 @@ function ResumeBuilder() {
         );
     }
 
+    function handleSkillChange(e, formData) {
+        e.preventDefault();
+
+        setSkills(prevSkills=>
+            prevSkills.map(skill =>
+                skill.id === formData.id ? formData : skill
+            )
+        )
+    }
+
     return (
         <>
             <h1>Resume Outliner</h1>
@@ -128,6 +148,11 @@ function ResumeBuilder() {
                         handleInfoChange={handleProjectChange}
                         setProjects={setProjects}
                     />
+                    <TechnicalSkillsManager
+                        skills={skills}
+                        handleInfoChange={handleSkillChange}
+                        setSkills={setSkills}
+                    />
                 </div>
                 <ResumePreview
                     fullName={fullName}
@@ -136,6 +161,7 @@ function ResumeBuilder() {
                     experiences={experiences}
                     schools={schools}
                     projects={projects}
+                    skills={skills}
                 />
             </div>
             <footer>

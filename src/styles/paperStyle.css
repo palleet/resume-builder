@@ -75,3 +75,11 @@
 #saveBtn {
     width: 50%;
 }
+
+.skillLine {
+    text-align: left;
+}
+
+.skillCategory {
+    font-weight: 700;
+}

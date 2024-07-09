@@ -1,14 +1,6 @@
 import WorkExperienceInfo from "./WorkExperienceInfo.jsx";
 
 function ResumePreview(props) {
-    // function printDiv(divName) {
-    //     var printContents = document.getElementById(divName).innerHTML;
-    //     w=window.open();
-    //     w.document.write(printContents);
-    //     w.print();
-    //     w.close();
-    // }
-
     return (
         <div id="resume-preview">
             <div id="paper">
@@ -70,7 +62,7 @@ function ResumePreview(props) {
                             <>
 
                                 <div id="secHeader">
-                                    <div id="projectName">{project.projectName}</div>
+                                    <div id="projectNameAndSkills">{project.projectName} | {project.skills}</div>
                                     <div id="dates">{project.startDate} - {project.endDate}</div>
                                 </div>
                                 <div id="description">
@@ -82,6 +74,18 @@ function ResumePreview(props) {
 
                                 </div>
 
+                            </>
+                        )
+                    })}
+                    <h2>Technical Skills</h2>
+                    <hr />
+                    {props.skills.map((skill) => {
+                        return (
+                            <>
+                                <div className="skillLine">
+                                    <span className="skillCategory">{skill.category}: {}</span>
+                                    <span className="skillItems">{skill.items}</span>
+                                </div>
                             </>
                         )
                     })}

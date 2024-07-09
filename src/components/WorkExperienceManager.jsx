@@ -27,7 +27,7 @@ function WorkExperienceManager({experiences, handleInfoChange, setExperiences}) 
             )}
 
 
-            <button onClick={addExperience}>Add</button>
+            <button onClick={addExperience}>Add Experience</button>
         </>
     );
 }
