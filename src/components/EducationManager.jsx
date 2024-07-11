@@ -6,11 +6,12 @@ export function EducationManager({schools, handleInfoChange, setSchools}) {
     function addSchool() {
         setSchools([...schools, {
             id: uuidv4(),
-            schoolName: 'new College University',
-            location: 'Berkeley',
-            startDate: '1999-02',
-            endDate: '2000-10',
-            degree: 'Cognitive Science'
+            schoolName: '',
+            location: '',
+            startDate: '',
+            endDate: '',
+            present: false,
+            degree: ''
         }]);
     }
 
@@ -28,7 +29,7 @@ export function EducationManager({schools, handleInfoChange, setSchools}) {
             )}
 
 
-            <button onClick={addSchool}>Add School</button>
+            <button className="addBtn" onClick={addSchool}>Add School</button>
         </>
     )
 }

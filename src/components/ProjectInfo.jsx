@@ -33,7 +33,7 @@ function ProjectInfo({ handleInfoChange, project}) {
                     <input
                         name="projectName"
                         placeholder="Project Name"
-                        className="Project Name"
+                        className="formProjectName"
                         value={formData.projectName}
                         onChange={handleChange}
                     />
@@ -43,7 +43,7 @@ function ProjectInfo({ handleInfoChange, project}) {
                     <input
                         name="skills"
                         placeholder="Skills"
-                        className="skills"
+                        className="formSkills"
                         value={formData.skills}
                         onChange={handleChange}
                     />
@@ -52,7 +52,7 @@ function ProjectInfo({ handleInfoChange, project}) {
                     <label htmlFor="startDate">Start date</label>
                     <input
                         type="month"
-                        className="start"
+                        className="formStart"
                         name="startDate"
                         min="1900-01"
                         value={formData.startDate}
@@ -63,14 +63,24 @@ function ProjectInfo({ handleInfoChange, project}) {
                     <label htmlFor="endDate">End date</label>
                     <input
                         type="month"
-                        className="end"
+                        className="formEnd"
                         name="endDate"
                         min="1900-01"
                         value={formData.endDate}
                         onChange={handleChange}
                     />
+                    <div className="presentBox">
+                        <input
+                            type="checkbox"
+                            name="present"
+                            className="formPresent"
+                            value={"Present"}
+                            onChange={handleChange}
+                        />
+                        <label htmlFor="present">Present</label>
+                    </div>
                 </div>
-                <div className="inputCol">
+                <div className="inputRow">
                     <label htmlFor="description">Responsibilities and Achievements</label>
                     <textarea
                         name="description"
@@ -79,7 +89,7 @@ function ProjectInfo({ handleInfoChange, project}) {
                         onChange={handleChange}
                     />
                 </div>
-                <button type="submit">Save</button>
+                <button className="saveBtn" type="submit">Save</button>
             </form>
         </div>
     );

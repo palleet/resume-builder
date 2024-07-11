@@ -20,7 +20,7 @@ function ResumeBuilder() {
 
     const [personalInfo, setPersonalInfo] = useState({
         fullName: 'Jane Doe',
-        email: 'JDoe@jeemail.com',
+        email: 'janedoe@jmail.com',
         phoneNumber: '5555555555',
         links: []
     });
@@ -29,11 +29,11 @@ function ResumeBuilder() {
     const [schools, setSchools] = useState([
         {
             id: uuidv4(),
-            schoolName: 'First College University',
+            schoolName: 'University of California, Irvine',
             location: 'Irvine',
-            startDate: '1999-02',
-            endDate: '2000-10',
-            degree: 'Computer Science'
+            startDate: '2015-10',
+            endDate: '2019-06',
+            degree: 'Bachelor of Arts in Computer Science'
         }
     ]);
 
@@ -41,12 +41,15 @@ function ResumeBuilder() {
     const [experiences, setExperiences] = useState([
         {
             id: uuidv4(),
-            positionTitle: 'example position',
-            employer: 'ex employer',
+            positionTitle: 'Undergraduate Research Assistant',
+            employer: 'University of California, Irvine',
             location: 'Irvine',
-            startDate: '1999-02',
-            endDate: '2000-10',
-            description: ''
+            startDate: '2015-11',
+            endDate: '2016-03',
+            present: false,
+            description: 'Conducted research on machine learning algorithms for natural language processing.\n' +
+                'Implemented various models using TensorFlow, achieving a 15% improvement in accuracy.\n' +
+                'Co-authored a paper presented at the AAAI Conference on Artificial Intelligence.'
         }
     ]);
 
@@ -54,11 +57,13 @@ function ResumeBuilder() {
     const [projects, setProjects] = useState([
         {
             id: uuidv4(),
-            projectName: 'example Project v1',
-            employer: 'C++, Qt',
-            startDate: '1999-02',
-            endDate: '2000-10',
-            description: ''
+            projectName: 'E-commerce Website',
+            skills: 'React, Node.js, MongoDB',
+            startDate: '2016-03',
+            endDate: '2017-01',
+            present: false,
+            description: 'Built a full-stack e-commerce website using React, Node.js, and MongoDB.\n' +
+                'Implemented user authentication, product management, and payment processing.'
         }
     ]);
 
@@ -66,8 +71,8 @@ function ResumeBuilder() {
     const [skills, setSkills] = useState([
         {
             id: uuidv4(),
-            category: 'languages',
-            items: 'C++, Java, Python'
+            category: 'Languages',
+            items: 'C++, Java, Python, Javascript, React'
         }
     ]);
 

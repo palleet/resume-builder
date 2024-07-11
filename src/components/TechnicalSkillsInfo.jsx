@@ -1,24 +1,16 @@
 import React, { useState } from "react";
+import { useForm } from './helpers/useForm.js';
+import { useSubmit } from './helpers/useSubmit.js';
 
 export default function TechnicalSkillsInfo({handleInfoChange, skill}) {
-    const [formData, setFormData] = useState({
+    const initialFormData = {
         id: skill.id,
         category: skill.category|| "",
         items: skill.items || ""
-    });
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value
-        });
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        handleInfoChange(e, formData);
-    };
+    const [formData, handleChange, setFormData] = useForm(initialFormData);
+    const handleSubmit = useSubmit(handleInfoChange, formData);
 
     return (
         <div className="technicalSkillsInfo">
@@ -28,7 +20,7 @@ export default function TechnicalSkillsInfo({handleInfoChange, skill}) {
                     <input
                         name="category"
                         placeholder="Category Name"
-                        className="category"
+                        className="formCategory"
                         value={formData.category}
                         onChange={handleChange}
                     />
@@ -38,12 +30,12 @@ export default function TechnicalSkillsInfo({handleInfoChange, skill}) {
                     <input
                         name="items"
                         placeholder="Skills"
-                        className="items"
+                        className="formItems"
                         value={formData.items}
                         onChange={handleChange}
                     />
                 </div>
-                <button type="submit">Save</button>
+                <button className="saveBtn" type="submit">Save</button>
             </form>
         </div>
 

@@ -6,10 +6,11 @@ function ProjectManager({projects, handleInfoChange, setProjects}) {
         setProjects([...projects,
             {
                 id: uuidv4(),
-                projectName: 'new Project v2',
-                skills: 'Java, Python',
-                startDate: '1999-02',
-                endDate: '2000-10',
+                projectName: '',
+                skills: 'Java, Pytho',
+                startDate: '1999-0',
+                endDate: '',
+                present: false,
                 description: ''
             }
         ]);
@@ -26,7 +27,7 @@ function ProjectManager({projects, handleInfoChange, setProjects}) {
             )}
 
 
-            <button onClick={addProject}>Add Project</button>
+            <button className="addBtn" onClick={addProject}>Add Project</button>
         </>
     );
 }

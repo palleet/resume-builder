@@ -28,6 +28,13 @@ function PersonalInfo({ personalInfo, handleInfoChange }) {
         }));
     };
 
+    const removeLink = (index) => {
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            links: prevFormData.links.filter((_, i) => i !== index)
+        }));
+    };
+
     // implement form helpers
     return (
         <div id="personalInfo">
@@ -65,6 +72,7 @@ function PersonalInfo({ personalInfo, handleInfoChange }) {
                 </div>
                 <div className="inputRow">
                     <label>Links</label>
+                    <div className="linkCol">
                     {formData.links.map((link, index) => (
                         <div key={index}>
                             <input
@@ -73,11 +81,13 @@ function PersonalInfo({ personalInfo, handleInfoChange }) {
                                 value={link}
                                 onChange={(e) => handleLinkChange(index, e.target.value)}
                             />
+                            <button type="button" onClick={() => removeLink(index)}>Remove</button>
                         </div>
                     ))}
+                    </div>
                 </div>
-                <button type="button" onClick={addLink}>Add Link</button>
-                <button type="submit">Save</button>
+                <button className="addLink" type="button" onClick={addLink}>Add Link</button>
+                <button className="saveBtn" type="submit">Save</button>
             </form>
 
         </div>

@@ -5,12 +5,14 @@ function WorkExperienceManager({experiences, handleInfoChange, setExperiences}) 
     function addExperience() {
         setExperiences([...experiences, {
             id: uuidv4(),
-            positionTitle: 'new position',
-            employer: 'new employer',
-            location: 'Berkeley',
-            startDate: '1999-02',
-            endDate: '2000-10',
+            positionTitle: '',
+            employer: '',
+            location: '',
+            startDate: '',
+            endDate: '',
+            present: false,
             description: ''
+
         }]);
     }
 
@@ -28,7 +30,7 @@ function WorkExperienceManager({experiences, handleInfoChange, setExperiences}) 
             )}
 
 
-            <button onClick={addExperience}>Add Experience</button>
+            <button className="addBtn" onClick={addExperience}>Add Experience</button>
         </>
     );
 }

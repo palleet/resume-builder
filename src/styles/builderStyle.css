@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    gap: 2rem;
 }
 
 #resume-preview, #Information {
@@ -20,11 +21,13 @@
     height: 100%;
 }
 
+
+
 @media only screen and (max-width: 1250px) {
     #container {
         flex-direction: column;
     }
-    #saveBtn {
+    #savePdfBtn {
         width: 60%;
     }
 }

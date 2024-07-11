@@ -5,8 +5,8 @@ export default function TechnicalSkillsManager({ skills, handleInfoChange, setSk
     function addSkill() {
         setSkills([...skills, {
             id: uuidv4(),
-            category: 'Programs',
-            items: 'Github, VS Code, Photoshop'
+            category: '',
+            items: ''
             }
         ]);
     }
@@ -21,7 +21,7 @@ export default function TechnicalSkillsManager({ skills, handleInfoChange, setSk
                     id={skill.id}
                 />
             )}
-            <button onClick={addSkill}>Add Skill</button>
+            <button className="addBtn" onClick={addSkill}>Add Skill</button>
         </>
     );
 }

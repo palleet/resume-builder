@@ -1,13 +1,36 @@
-/*.text-area {*/
-/*    display: list-item;*/
-/*    margin-left : 1em;*/
-/*    outline: none;*/
-/*}*/
-/*.text-area div {*/
-/*    display: list-item;*/
-/*}*/
+.text-area {
+    vertical-align: top;
+    resize: vertical;
+}
 
-.inputCol {
+.inputRow {
+    display: flex;
+    width: 100%;
+}
+
+.inputRow label {
+    width: 20%;
+}
+
+.inputRow input, textarea {
+    flex-grow: 1;
+    padding: 0.3rem 0.5rem;
+    border-radius: 9px;
+    border: 1px solid #ececec;
+    background-color: #f9f9f9;
+}
+
+.saveBtn, .addLink {
+    border: 1px solid #ececec;
+    background-color: #f9f9f9;
+}
+
+.addBtn {
+    background-color: #7dcb65;
+    color: black;
+}
+
+.linkCol {
     display: flex;
     flex-direction: column;
 }

@@ -1,6 +1,10 @@
 
 
 export default function formatDate(dateString) {
+    if(dateString == "Present") {
+        return `Present`;
+    }
+
     // Create an array of abbreviated month names
     const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 

@@ -39,35 +39,36 @@
     margin: 0.5in 0.5in;
 }
 
-#secHeader {
+#personalInfoHeader {
+    text-align: center;
+}
+
+.secHeader {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-#positionTitle, #schoolName {
+.positionTitle, .schoolName {
     font-weight: 700;
 }
 
-#dates {
-}
-
-#origin, #description {
+.origin, .description {
     font-size: 10pt;
 }
 
-#origin {
+.origin {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     font-style: italic;
 }
 
-#description {
+.description {
     text-align: left;
 }
 
-#description ul {
+.description ul {
     margin: 0;
 
 }
