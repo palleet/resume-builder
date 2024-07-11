@@ -21,7 +21,15 @@
     height: 100%;
 }
 
+footer {
+    text-align: center;
+}
 
+footer .github-logo img, footer .github-logo source {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}
 
 @media only screen and (max-width: 1250px) {
     #container {

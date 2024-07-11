@@ -12,6 +12,9 @@ import {EducationManager} from "./EducationManager.jsx";
 import ProjectManager from "./ProjectManager.jsx";
 import TechnicalSkillsManager from "./TechnicalSkillsManager.jsx";
 
+import githubLogoLightMode from '../assets/github-mark.svg';
+import githubLogoDarkMode from '../assets/github-mark-white.svg';
+
 function ResumeBuilder() {
     // personal info state declarations
     const [fullName, setFullName] = useState('');
@@ -184,7 +187,17 @@ function ResumeBuilder() {
                 />
             </div>
             <footer>
-                <a href="https://www.flaticon.com/free-icons/human-resources" title="human resources icons">Favicon from Flaticon</a>
+                <a href="https://www.flaticon.com/free-icons/human-resources" title="human resources icons">Favicon from
+                    Flaticon</a>
+                <br/>
+
+                <picture className="github-logo">
+                    <source srcSet={githubLogoDarkMode} media="(prefers-color-scheme:dark)"/>
+                    <img src={githubLogoLightMode} alt="Github Logo" />
+                </picture>
+
+                <br/>
+                Copyright © Patrick Lee 2024
             </footer>
         </>
 

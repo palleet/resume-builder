@@ -2,13 +2,35 @@ import WorkExperienceInfo from "./WorkExperienceInfo.jsx";
 import formatDate from "./helpers/formHelpers.js";
 
 function ResumePreview(props) {
+    function formatPhoneNumber(numberString) {
+        // Ensure the input is a string and remove any non-digit characters
+        const cleaned = ('' + numberString).replace(/\D/g, '');
+
+        if (cleaned.length != 10) {
+            return cleaned;
+        }
+
+        // Check if the input is the correct length
+        if (cleaned.length !== 10) {
+            throw new Error("Invalid phone number length");
+        }
+
+        // Extract the parts of the phone number
+        const areaCode = cleaned.slice(0, 3);
+        const centralOfficeCode = cleaned.slice(3, 6);
+        const lineNumber = cleaned.slice(6);
+
+        // Format and return the phone number
+        return `(${areaCode}) ${centralOfficeCode}-${lineNumber}`;
+    }
+
     return (
         <div id="resume-preview">
             <div id="paper">
                 <div id="paperContainer">
                     <div id="personalInfoHeader">
                         <h1>{props.personalInfo.fullName}</h1>
-                        <div id="contactInfo">{props.personalInfo.phoneNumber} | {props.personalInfo.email}
+                        <div id="contactInfo">{formatPhoneNumber(props.personalInfo.phoneNumber)} | {props.personalInfo.email}
                             {props.personalInfo.links.map((link, index) => (
                                 <>
                                     {link != '' ? <>&nbsp;| {link}</> : null}
