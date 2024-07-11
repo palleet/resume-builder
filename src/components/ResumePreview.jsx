@@ -6,13 +6,12 @@ function ResumePreview(props) {
         <div id="resume-preview">
             <div id="paper">
                 <div id="paperContainer">
-                    <h1>{props.fullName}</h1>
-                    <div id="contactInfo">{props.phoneNumber} | {props.email}</div>
+                    <h1>{props.personalInfo.fullName}</h1>
+                    <div id="contactInfo">{props.personalInfo.phoneNumber} | {props.personalInfo.email}</div>
                     <br/>
                     <h2>Education</h2>
                     <hr/>
                     {props.schools.map((school) => {
-
                         return (
                             <>
 

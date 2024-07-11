@@ -4,7 +4,7 @@ import React, { useState } from "react";
 function EducationInfo({handleInfoChange, school}) {
     const [formData, setFormData] = useState({
         id: school.id,
-        school: school.schoolName|| "",
+        schoolName: school.schoolName|| "",
         location: school.location || "",
         startDate: school.startDate || "",
         endDate: school.endDate || "",
@@ -27,7 +27,6 @@ function EducationInfo({handleInfoChange, school}) {
 
     return (
         <div className="schoolInfo">
-            <h2>School</h2>
             <form onSubmit={handleSubmit}>
                 <div className="inputRow">
                     <label htmlFor="School Name">School Name</label>

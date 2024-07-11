@@ -16,6 +16,7 @@ function WorkExperienceManager({experiences, handleInfoChange, setExperiences}) 
 
     return (
         <>
+            <h2>Experience</h2>
             {experiences.map((experience) =>
                 <WorkExperienceInfo
 

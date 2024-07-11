@@ -27,7 +27,6 @@ function WorkExperienceInfo({ handleInfoChange, experience }) {
 
     return (
         <div className="workExperienceInfo">
-            <h2>Experience</h2>
             <form onSubmit={handleSubmit}>
                 <div className="inputRow">
                     <label htmlFor="positionTitle">Position title</label>

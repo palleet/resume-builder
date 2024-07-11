@@ -16,6 +16,7 @@ export function EducationManager({schools, handleInfoChange, setSchools}) {
 
     return (
         <>
+            <h2>Education</h2>
             {schools.map((school, index) =>
                 <EducationInfo
 
@@ -27,7 +28,7 @@ export function EducationManager({schools, handleInfoChange, setSchools}) {
             )}
 
 
-            <button onClick={addSchool}>Add</button>
+            <button onClick={addSchool}>Add School</button>
         </>
     )
 }

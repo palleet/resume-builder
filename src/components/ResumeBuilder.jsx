@@ -18,6 +18,13 @@ function ResumeBuilder() {
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
 
+    const [personalInfo, setPersonalInfo] = useState({
+        fullName: 'Jane Doe',
+        email: 'JDoe@jeemail.com',
+        phoneNumber: '5555555555',
+        links: []
+    });
+
     // education info state declarations
     const [schools, setSchools] = useState([
         {
@@ -64,20 +71,28 @@ function ResumeBuilder() {
         }
     ]);
 
-    function handlePersonalInfoChange(e) {
+    // function handlePersonalInfoChange(e) {
+    //     e.preventDefault();
+    //
+    //     let nameInput = document.getElementById('name');
+    //     let emailInput = document.getElementById('email');
+    //     let phoneInput = document.getElementById('phoneNumber');
+    //
+    //     let nameValue = nameInput.value;
+    //     let emailValue = emailInput.value;
+    //     let phoneValue = phoneInput.value;
+    //
+    //     setFullName(nameValue);
+    //     setEmail(emailValue);
+    //     setPhoneNumber(phoneValue);
+    // }
+    function handlePersonalInfoChange(e, formData) {
         e.preventDefault();
 
-        let nameInput = document.getElementById('name');
-        let emailInput = document.getElementById('email');
-        let phoneInput = document.getElementById('phoneNumber');
-
-        let nameValue = nameInput.value;
-        let emailValue = emailInput.value;
-        let phoneValue = phoneInput.value;
-
-        setFullName(nameValue);
-        setEmail(emailValue);
-        setPhoneNumber(phoneValue);
+        setPersonalInfo(prevInfo =>({
+            ...prevInfo,
+            ...formData
+        }));
     }
 
     function handleWorkExperienceChange(e, formData) {
@@ -121,13 +136,11 @@ function ResumeBuilder() {
 
     return (
         <>
-            <h1>Resume Outliner</h1>
+            <h1>Resume Pal</h1>
             <div id="container">
                 <div id="Information">
                     <PersonalInfo
-                        fullName={fullName}
-                        email={email}
-                        phoneNumber={phoneNumber}
+                        personalInfo={personalInfo}
                         handleInfoChange={handlePersonalInfoChange}
                     />
 
@@ -158,6 +171,7 @@ function ResumeBuilder() {
                     fullName={fullName}
                     email={email}
                     phoneNumber={phoneNumber}
+                    personalInfo={personalInfo}
                     experiences={experiences}
                     schools={schools}
                     projects={projects}

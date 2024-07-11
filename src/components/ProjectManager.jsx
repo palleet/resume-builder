@@ -26,7 +26,7 @@ function ProjectManager({projects, handleInfoChange, setProjects}) {
             )}
 
 
-            <button onClick={addProject}>Add</button>
+            <button onClick={addProject}>Add Project</button>
         </>
     );
 }
