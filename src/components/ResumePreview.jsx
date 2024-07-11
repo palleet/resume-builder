@@ -7,7 +7,13 @@ function ResumePreview(props) {
             <div id="paper">
                 <div id="paperContainer">
                     <h1>{props.personalInfo.fullName}</h1>
-                    <div id="contactInfo">{props.personalInfo.phoneNumber} | {props.personalInfo.email}</div>
+                    <div id="contactInfo">{props.personalInfo.phoneNumber} | {props.personalInfo.email}
+                        {props.personalInfo.links.map((link, index) => (
+                            <>
+                                &nbsp;| {link}
+                            </>
+                        ))}
+                    </div>
                     <br/>
                     <h2>Education</h2>
                     <hr/>
