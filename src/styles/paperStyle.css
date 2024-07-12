@@ -14,7 +14,7 @@
 }
 
 #paper {
-    font-family: "Computer Modern";
+    font-family: "Computer Modern", serif;
     width: 216mm;
     height: 279mm;
     margin: 0;
@@ -77,8 +77,11 @@
     font-weight: 700;
 }
 
-#saveBtn {
+#savePdfBtn {
     width: 50%;
+    background-color: #050505;
+    color: white;
+    margin-top: 2rem;
 }
 
 .skillLine {
@@ -87,4 +90,19 @@
 
 .skillCategory {
     font-weight: 700;
+}
+
+@media only screen and (max-width: 500px) {
+    #paper {
+        width: 108mm;
+        height: 139.5mm;
+        font-size: 5.5pt;
+    }
+    .origin, .description {
+        font-size: 5pt;
+    }
+    #resume-preview {
+        margin-right: -2rem;
+        margin-left: -2rem;
+    }
 }

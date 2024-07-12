@@ -73,20 +73,22 @@ function PersonalInfo({ personalInfo, handleInfoChange }) {
                 <div className="inputRow">
                     <label>Links</label>
                     <div className="linkCol">
-                    {formData.links.map((link, index) => (
-                        <div key={index}>
-                            <input
-                                type="text"
-                                placeholder={`Link ${index + 1}`}
-                                value={link}
-                                onChange={(e) => handleLinkChange(index, e.target.value)}
-                            />
-                            <button type="button" onClick={() => removeLink(index)}>Remove</button>
-                        </div>
-                    ))}
+                        {formData.links.map((link, index) => (
+                            <div className="linkRow" key={index}>
+                                <input
+                                    type="text"
+                                    placeholder={`Link ${index + 1}`}
+                                    value={link}
+                                    onChange={(e) => handleLinkChange(index, e.target.value)}
+                                />
+                                <button type="button" onClick={() => removeLink(index)}>Remove</button>
+                            </div>
+                        ))}
+                        <button className="addLink" type="button" onClick={addLink}>Add Link</button>
                     </div>
+
                 </div>
-                <button className="addLink" type="button" onClick={addLink}>Add Link</button>
+
                 <button className="saveBtn" type="submit">Save</button>
             </form>
 

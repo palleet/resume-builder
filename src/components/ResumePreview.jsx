@@ -52,7 +52,7 @@ function ResumePreview(props) {
                                 <div className="origin">
                                     <div className="degree">{school.degree}</div>
                                     <div className="dates">{formatDate(school.startDate)} -
-                                        {school.present ? " Present" : <>{formatDate(school.endDate)}</>}
+                                        {school.present ? " Present" : <>{" " + formatDate(school.endDate)}</>}
                                     </div>
                                 </div>
 
@@ -69,7 +69,7 @@ function ResumePreview(props) {
                                 <div className="secHeader">
                                     <div className="positionTitle">{experience.positionTitle}</div>
                                     <div className="dates">{formatDate(experience.startDate)} -
-                                        {experience.present ? " Present" : <>{formatDate(experience.endDate)}</>}
+                                        {experience.present ? " Present" : <>{" " + formatDate(experience.endDate)}</>}
                                     </div>
                                 </div>
                                 <div className="origin">
@@ -104,7 +104,7 @@ function ResumePreview(props) {
 
                                     </div>
                                     <div className="dates">{formatDate(project.startDate)} -
-                                        {project.present ? " Present" : <>{formatDate(project.endDate)}</>}
+                                        {project.present ? " Present" : <>{" " + formatDate(project.endDate)}</>}
 
                                     </div>
                                 </div>

@@ -17,12 +17,10 @@
     padding: 0.3rem 0.5rem;
     border-radius: 9px;
     border: 1px solid #ececec;
-    background-color: #f9f9f9;
 }
 
 .saveBtn, .addLink {
     border: 1px solid #ececec;
-    background-color: #f9f9f9;
 }
 
 .addBtn {
@@ -33,4 +31,13 @@
 .linkCol {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+}
+
+.linkRow {
+    display: flex;
+}
+
+.linkCol input {
+    flex-grow: 1;
 }

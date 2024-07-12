@@ -190,12 +190,12 @@ function ResumeBuilder() {
                 <a href="https://www.flaticon.com/free-icons/human-resources" title="human resources icons">Favicon from
                     Flaticon</a>
                 <br/>
-
-                <picture className="github-logo">
-                    <source srcSet={githubLogoDarkMode} media="(prefers-color-scheme:dark)"/>
-                    <img src={githubLogoLightMode} alt="Github Logo" />
-                </picture>
-
+                <a href="https://github.com/palleet/resume-builder" title="Github Repository">
+                    <picture className="github-logo">
+                        <source srcSet={githubLogoDarkMode} media="(prefers-color-scheme:dark)"/>
+                        <img src={githubLogoLightMode} alt="Github Logo" />
+                    </picture>
+                </a>
                 <br/>
                 Copyright © Patrick Lee 2024
             </footer>

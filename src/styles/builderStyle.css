@@ -12,7 +12,7 @@
 
 
 #resume-preview {
-    background-color: #f6f7f9;
+    background-color: #3d3d3d;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -40,6 +40,8 @@ footer .github-logo img, footer .github-logo source {
     }
 }
 
+
+
 @media print {
     @page {
         size: Letter; /* You can adjust the size as needed (e.g., Letter) */
@@ -47,7 +49,7 @@ footer .github-logo img, footer .github-logo source {
     }
     /* Limit page print to only 1 page */
     html, body {
-        height:100%;
+        height: 100%;
         margin: 0 !important;
         padding: 0 !important;
         overflow: hidden;
@@ -64,5 +66,29 @@ footer .github-logo img, footer .github-logo source {
         width: 100%;
         max-height: 100%;
         page-break-after: always;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color: #213547;
+        background-color: #ffffff;
+    }
+    a:hover {
+        color: #747bff;
+    }
+    button {
+        background-color: #f9f9f9;
+    }
+
+    .inputRow input, textarea {
+        background-color: #f9f9f9;
+    }
+    .saveBtn, .addLink {
+        background-color: #f9f9f9;
+    }
+
+    #resume-preview {
+        background-color: #f6f7f9;
     }
 }
